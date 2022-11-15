@@ -1,0 +1,9 @@
+FROM ubuntu:16.04 as builder
+
+RUN apt-get update
+RUN apt-get -y install curl
+RUN curl https://danielalmenar.com | wc -c > danielalmenar-size
+
+FROM alpine
+COPY --from=builder /danielalmenar-size /danielalmenar-size
+ENTRYPOINT echo danielalmenar is this big; cat danielalmenar-size
