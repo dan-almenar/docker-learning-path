@@ -17,6 +17,17 @@ $ docker images
 ```
 Lists all images on the system.
 
+## Configuring Docker
+```bash
+$ docker info | more
+```
+Displays the Docker's and host system's configuration.
+
+```bash
+$ docker login
+```
+Login to [Docker Hub](https://hub.docker.com/).
+
 ## Working with Dockerfiles
 ```bash
 $ docker build -t <tag-of-resulting-container> <path-to-the-Dockerfile>
